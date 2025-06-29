@@ -1,0 +1,65 @@
+
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Факти за България</title>
+  </head>
+  <body>
+    <div align="center">
+      <h1>Факти за България</h1>
+      <img src="bulgaria-map.png" />
+      <table>
+        <tr>
+          <td>Площ</td>
+          <td></td>
+          <td>110 993.6 кв.км.</td>
+        </tr>
+        <tr>
+          <td>Население</td>
+          <td></td>
+          <td>6 838 937</td>
+        </tr>
+        <tr>
+          <td>Столица</td>
+          <td></td>
+          <td>София</td>
+        </tr>
+      </table>
+      <br />
+      <h1>Големи градове</h1>
+      <div id="newDiv">
+        
+<ol id="ol1">
+</ol>
+	</div>
+
+ <script>
+
+      fetch('cities.php')
+        .then(response => {
+          if (!response.ok) throw new Error('Грешка при заявката към сървъра');
+          return response.json();
+        })
+        .then(data => {
+        const olElmnt = document.getElementById('ol1')
+	const newLi = document.createElement("li");
+	newLi.textContent = data.city_name;
+	elElmnt.appendChild(newLi);
+	  console.log('Градове от базата:', data);
+        })
+        .catch(err => {
+	const errorMsg = err.message;
+	const newElmt = document.createElement("h2");
+	newElmt.textContent = errorMsg;
+	const mainDiv = document.getElementById('newDiv');
+	mainDiv.appendChild(newElmt);
+          console.error(' Грешка при заявката:', err.message);
+        });
+
+</script>
+
+
+     
+
+  </body>
+</html>
