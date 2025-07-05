@@ -1,0 +1,9 @@
+FROM php:8.2-apache
+
+# Install MySQLi and PDO_MySQL drivers
+RUN docker-php-ext-install mysqli pdo pdo_mysql
+
+# Copy web files into Apache root
+COPY web/ /var/www/html/
+
+EXPOSE 80
