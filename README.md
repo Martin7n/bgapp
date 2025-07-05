@@ -63,3 +63,5 @@ Note that both containers should be attached to the same network to have working
 When built and deployed correctly, the result should look like this:
 
 ![preview of the working application](bgapp.png)
+
+
