@@ -5,6 +5,8 @@
   </head>
   <body>
     <div align="center">
+
+      <h2>M6 Практика:</h2>
       <h1>Факти за България</h1>
       <img src="bulgaria-map.png" />
       <table>
